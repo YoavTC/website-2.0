@@ -1,0 +1,64 @@
+@font-face {
+    font-family: JetBrains;
+    src: url('JetbrainsMonoRegular.ttf');
+}
+
+body {
+    font-family: JetBrains;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 2.5%;
+}
+
+.linkOption {
+    color: black;
+    user-select: none;
+    margin: 1%;
+    text-transform: uppercase;
+}
+
+.linkOption .highlight{
+    color: black;
+    background-color: rgb(246, 227, 8);
+    cursor: default;
+    user-select: none;
+    margin: 1%;
+    text-transform: uppercase;
+}
+
+.linkOption:hover .highlight {
+    color: white;
+    background-color: #00349e;
+}
+
+#backButton {
+    color: black;
+    background-color: rgb(246, 227, 8);
+}
+
+#backButton:hover {
+    color: white;
+    background-color: #00349e;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:visited:hover {
+    color: white;
+}
+
+h3 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#highlightText {
+    color: black;
+    background-color: rgb(246, 227, 8);
+}
+
+hr {
+    opacity: 50%;
+}

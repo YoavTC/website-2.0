@@ -1,0 +1,128 @@
+@font-face {
+    font-family: ExtraBold;
+    src: url('JetbrainsMonoRegular.ttf');
+}
+
+* {
+    font-family: ExtraBold;
+}
+
+body {
+    background-color: black;
+    margin: 2%;
+}
+
+h1 {
+    color: white;
+}
+
+#backButton {
+    color: black;
+    background-color: rgb(246, 227, 8);
+}
+
+#backButton:hover {
+    color: white;
+    background-color: #00349e;
+}
+
+h2 {
+    text-align: center;
+    font-family: ExtraBold, sans-serif;
+    transform: translateY(-175px);
+    margin: 1rem 0;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+h3 {
+    color: rgb(163, 163, 163);
+    font-size: 75%;
+    text-align: center;
+    font-weight: lighter;
+    margin: 1rem 0;
+}
+p {
+    font-family: ExtraBold, Helvetica, sans-serif;
+    margin: 1rem 0;
+}
+a {
+    text-decoration: underline;
+    color: rgb(45, 32, 110);
+    opacity: 100%;
+    transition: opacity 0.2s ease;
+
+}
+a:visited {
+    color: rgb(45, 32, 110);
+}
+a:hover {
+    opacity: 85%;
+}
+
+/* Sorting */
+#sorting {
+    margin: auto;
+
+    text-align: center;
+    width: 200px;
+    height: 70px;
+    font-size: 110%;
+    font-weight: bolder;
+    cursor: pointer;
+
+    appearance: none;
+    border-radius: 1%;
+
+    color: black;
+    background-color: rgb(246, 227, 8);
+}
+
+option {
+    background-color: rgb(246, 227, 8);
+    color: black;
+}
+
+
+/* Grid */
+#grid-parent {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+  
+.grid-item {
+    max-width: 350px;
+    max-height: 170px;
+    width: auto;
+    height: auto;
+
+    border-radius: 0%;
+    font-family: ExtraBold;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+}
+
+a:active {
+    opacity: 50%;
+}
+
+a h2 {
+    font-size: 200%;
+    padding-top: 42px;
+}
