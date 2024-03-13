@@ -37,9 +37,9 @@ var projectsList = [
     {date: '2023-11-20', name: "snowboard-tapper", link: ""},
     {date: '2023-11-27', name: "Beer Brewing in Minecraft", link: "https://www.planetminecraft.com/data-pack/beer-brewing/"},
     {date: '2023-11-28', name: "unity-event-system", link: ""},
-    {date: '2023-12-16', name: "vct-cards", link: ""}
+    {date: '2023-12-16', name: "vct-cards", link: ""},
+    {date: '2024-03-13', name: "vct-cointoss", link: ""}
 
-    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
