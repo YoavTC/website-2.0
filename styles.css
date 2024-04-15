@@ -10,19 +10,25 @@ body {
     margin: 2.5%;
 }
 
+h2 {
+    width: fit-content;
+}
+
 .linkOption {
     color: black;
     user-select: none;
     margin: 1%;
+    margin-right: 100%;
+    background-color: red;
     text-transform: uppercase;
 }
 
 .linkOption .highlight{
     color: black;
     background-color: rgb(246, 227, 8);
-    cursor: default;
     user-select: none;
     margin: 1%;
+    margin-right: 100%;
     text-transform: uppercase;
 }
 
