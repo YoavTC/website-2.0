@@ -40,9 +40,9 @@ var projectsList = [
 
     {date: '2024-03-13', name: "vct-cointoss", link: ""},
     {date: '2024-04-06', name: "Upgrade Enchantments", link: "https://www.planetminecraft.com/data-pack/upgrade-enchantments/"},
-    {date: '2024-14-04', name: "Liquipedia to vlr chrome extension", link: "https://github.com/YoavTC/liquipedia-to-vlr"}
+    {date: '2024-14-04', name: "Liquipedia to vlr chrome extension", link: "https://github.com/YoavTC/liquipedia-to-vlr"},
+    {date: '2024-07-08', name: "vct-classics", link: ""}
 
-    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}

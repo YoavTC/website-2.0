@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: TitleFont;
     font-weight: 700;
     margin: 1% 0;
+    font-weight: bolder;
 }
 
 .post-title {
@@ -29,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*MAIN TEXT*/
 p {
+    font-size: 130%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin: 1% 0;
