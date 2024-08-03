@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😎 • !!!CHANGE ME!!!</title>
+    <link rel="stylesheet" href="other/style_blog.css">
+
+    
+    <style>body {background: linear-gradient(to bottom, #161616, #4991ff);background-size: cover;}</style>
+</head>
+<body>
+    <h1>
+        <a href="../" id="backButton">Back &nbsp;&nbsp;←</a>
+    </h1>
+    <div id="cover">
+        <img src="imgs/redacted/banner.png">
+    </div>
+    <h1>
+        <a href="https://yoav-tc.itch.io/redacted" target="_blank">⬇️Download the Game</a>
+    </h1>
+    <h1>
+        <a href="https://github.com/YoavTC/openu-group-project" target="_blank">💿Source Code</a>
+    </h1>
+    <br>
+    <h1>
+        About The Game
+    </h1>
+    <p>
+        [REDACTED] is a game I made for the 2nd semester of my Game Development studies in the <a href="https://www.openu.ac.il/hasifa/game-design.html" target="_blank">Open University of Israel</a>. 
+        <br>
+        I made this game alongside our character artist & animator <a href="https://www.linkedin.com/in/ohad-dori/" target="_blank">Ohad Dori</a>, the project manager & level designer <a href="https://www.linkedin.com/in/inbar-gal-bb1125308/" target="_blank">Inbar Gal</a> and the environmental artist <a href="https://www.linkedin.com/in/alex-yakovlev-430124308/" target="_blank">Alex Yakovlev</a>.
+        <br>
+        Overall I've learnt a lot during the creation of this game. Both on myself and on working within a team. I'm very happy with the final result!
+    </p>
+    <h1>
+        During Development
+    </h1>
+    <p>
+        We made a lot of concepts and iterations of the game's visual style, gameplay mechanics and story. Here's some media showing the progress we made: 
+    </p>
+    <div class="embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OAnGK9GWqhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <br>
+    <h1>Code</h1>
+    <p>
+        I am especially prode of the code I've written for this project. I wrote a lot of code, but the biggest system I've made is the player's movement script.
+    </p>
+    <p>
+        While I know this script is pretty long and does more than just handle the player's movement, I was working with a relativly inexperienced team so I tried to limit the amount of GameObject, Components and Scripts to the minimal.
+    </p>
+<pre><code class="language-c#">
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
+using NaughtyAttributes;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+public class PlayerMovement : MonoBehaviour
+{
+    #region Variables
+    [Header("Debug Options")] 
+    [SerializeField] private bool doVoidDeath;
+    [SerializeField] private bool snappyMovement;
+    [EnableIf("doVoidDeath")]
+    [SerializeField] private Vector2 voidDeathLevel;
+
+    [HorizontalLine]
+    [Header("Layers")]
+    [SerializeField] private LayerMask wallGroundLayer;
+
+    [Header("Components")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Animator animator;
+    private PlayerSoundController playerSoundController;
+    private Rigidbody2D rb;
+
+    [HorizontalLine]
+    [Header("Movement")]
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float decelerationRate;
+    [SerializeField] private float airDecelerationRateMultiplier;
+    [SerializeField] private float maxSpeed;
+    private float moveInput;
+
+    [Header("Acceleration")] 
+    [SerializeField] private Vector3 accelerationTimePoints;
+    [SerializeField] private Vector3 accelerationBoostPoints;
+    private float nonZeroVelocityTime;
+    private float originalMaxSpeed;
+    private int lastSpeedState;
+
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpCooldown;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+    [ReadOnly] [SerializeField] private bool canJump;
+    [ReadOnly] [SerializeField] private bool isGrounded;
+    private LayerMask groundLayers;
+    private bool isJumpingThisFrame;
+
+    [Header("Wall Jumps")] 
+    [SerializeField] private float wallJumpForce;
+    [SerializeField] private float wallJumpDuration;
+    [SerializeField] private Transform rightWallPoint;
+    [FormerlySerializedAs("mountedRightWall")] [ReadOnly] [SerializeField] private bool wallMounted;
+    [ReadOnly] [SerializeField] private bool isWallJumping;
+    private PlayerClimbingController playerClimbingController;
+
+    [Header("Sliding")]
+    [SerializeField] private Transform slideBlockPoint;
+    [SerializeField] private Vector2 slideBlockRadius;
+    [SerializeField] private float slideDurationMax;
+    [SerializeField] private float slideDurationMin;
+    [ReadOnly] [SerializeField] private bool isSliding;
+    [ReadOnly] [SerializeField] private bool canGetUp;
+    private Coroutine slideCoroutine;
+
+    [Header("Flip")]
+    private int isFacingRight = 1;
+
+    [Header("Events")]
+    public UnityEvent playerDied;
+    public UnityEvent<int> speedLevelChange;
+
+    [Header("Animator Variables")]
+    private bool is_idle;
+    private bool is_mounted;
+    private bool is_airborne;
+    #endregion
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        playerClimbingController = GetComponent<PlayerClimbingController>();
+        playerSoundController = GetComponent<PlayerSoundController>();
+
+        lastSpeedState = 0;
+        originalMaxSpeed = maxSpeed;
+        canJump = true;
+        groundLayers = LayerMask.GetMask("NonJumpable", "WallGround");
+    }
+    
+    private void Update()
+    {
+        if (Time.deltaTime == 0) return;
+
+        isJumpingThisFrame = Input.GetButtonDown("Jump");
+        HandleMovement();
+        HandleFlipping();
+        UpdateAnimatorStates();
+        
+        if (doVoidDeath && transform.position.y < voidDeathLevel.y && transform.position.x < voidDeathLevel.x)
+        {
+            playerDied?.Invoke();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        PerformChecks();
+        ApplyHorizontalMovement();
+        ApplyDeceleration();
+        ClampHorizontalMovement();
+    }
+
+    private void HandleMovement()
+    {
+        HandleHorizontalMovement();
+        HandleAcceleration();
+        HandleJumping();
+        if (isJumpingThisFrame && CanWallJump()) HandleWallJumping();
+        HandleSliding();
+    }
+
+    #region FixedUpdate Methods
+
+    private void PerformChecks()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayers);
+        wallMounted = Physics2D.OverlapPoint(rightWallPoint.position, wallGroundLayer);
+
+        rb.gravityScale = (wallMounted && !isGrounded) ? 0f : 2f;
+
+        if (isGrounded) isWallJumping = false;
+    }
+    
+    private void ApplyHorizontalMovement()
+    {
+        rb.velocity += new Vector2(moveInput * moveSpeed, 0);
+    }
+    
+    private void ApplyDeceleration()
+    {
+        if (moveInput == 0 && !isWallJumping)
+        {
+            if (snappyMovement)
+            {
+                // Snappy movement
+                rb.velocity = isSliding ? new Vector2(isFacingRight * maxSpeed * 10, rb.velocity.y) : new Vector2(moveInput, rb.velocity.y);
+            }
+            else
+            {
+                // Floaty movement
+                float deceleration = decelerationRate;
+                if (!isGrounded) deceleration *= airDecelerationRateMultiplier;
+
+                rb.velocity = isSliding ? new Vector2(isFacingRight * maxSpeed * 10, rb.velocity.y) : new Vector2(Mathf.Lerp(rb.velocity.x, 0, deceleration), rb.velocity.y);
+            }
+        }
+    }
+    
+    private void ClampHorizontalMovement()
+    {
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), rb.velocity.y);
+    }
+
+    #endregion
+
+    #region Movement Methods
+
+    private void HandleHorizontalMovement()
+    {
+        if (isWallJumping)
+        {
+            moveInput = 0;
+            return;
+        }
+        moveInput = !isSliding ? Input.GetAxisRaw("Horizontal") : 0;
+    }
+    
+    private void HandleAcceleration()
+    {
+        if (isSliding || isWallJumping || !isGrounded) return;
+
+        if (Math.Abs(rb.velocity.x) > 0.5f)
+        {
+            nonZeroVelocityTime += Time.deltaTime;
+
+            int newSpeedState = 0;
+            float newMaxSpeed = originalMaxSpeed;
+
+            if (nonZeroVelocityTime >= accelerationTimePoints.z)
+            {
+                newSpeedState = 3;
+                newMaxSpeed += accelerationBoostPoints.z;
+            }
+            else if (nonZeroVelocityTime >= accelerationTimePoints.y)
+            {
+                newSpeedState = 2;
+                newMaxSpeed += accelerationBoostPoints.y;
+            }
+            else if (nonZeroVelocityTime >= accelerationTimePoints.x)
+            {
+                newSpeedState = 1;
+                newMaxSpeed += accelerationBoostPoints.x;
+            }
+
+            if (newSpeedState != lastSpeedState)
+            {
+                speedLevelChange?.Invoke(newSpeedState);
+                lastSpeedState = newSpeedState;
+            }
+            maxSpeed = newMaxSpeed;
+        }
+        else
+        {
+            if (lastSpeedState != 0)
+            {
+                speedLevelChange?.Invoke(0);
+                lastSpeedState = 0;
+            }
+            nonZeroVelocityTime = 0;
+            maxSpeed = originalMaxSpeed;
+        }
+    }
+
+    private void HandleJumping()
+    {
+        if (!isSliding && isGrounded && isJumpingThisFrame && canJump)
+        {
+            InGameLogger.Log("Jumping!!!", Color.magenta);
+            animator.SetTrigger("jump");
+            StartCoroutine(JumpCooldown());
+            Jump();
+        }
+    }
+    
+    private void Jump()
+    {
+        playerSoundController.OnJump();
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+    }
+    
+    private IEnumerator JumpCooldown()
+    {
+        canJump = false;
+        animator.SetBool("can_transition_from_jump", false);
+        yield return HelperFunctions.GetWait(jumpCooldown);
+        animator.SetBool("can_transition_from_jump", true);
+        canJump = true;
+    }
+    
+    private void HandleWallJumping()
+    {
+        animator.SetBool("is_mounted", true);
+        
+        rb.velocity = Vector2.zero;
+        isWallJumping = true;
+            
+        Vector3 playerPos = transform.position;
+        var (point, isLastPoint) = playerClimbingController.GetNextPoint(playerPos, groundLayers, isFacingRight);
+        if (point == Vector3.zero || isLastPoint)
+        {
+            rb.velocity = new Vector2((wallJumpForce + maxSpeed) * -isFacingRight, 0);
+            Jump();
+        }
+        else
+        {
+            transform.DOMove(point, wallJumpDuration).SetEase(Ease.OutSine);
+        }
+        Flip();
+    }
+    
+    private void HandleSliding()
+    {
+        if (isJumpingThisFrame) return;
+        if (isGrounded && Input.GetButtonDown("Slide") && !isSliding && Mathf.Abs(moveInput) > 0)
+        {
+            slideCoroutine = StartCoroutine(Slide());
+        }
+
+        if (!Input.GetButton("Slide") && isSliding && canGetUp)
+        {
+            StartCoroutine(GetUpFromSlide());
+        }
+    }
+
+    private IEnumerator Slide()
+    {
+        InGameLogger.Log("Sliding, wow!!", Color.green);
+        playerSoundController.OnSlideActivate();
+        animator.SetBool("is_sliding", true);
+
+        canGetUp = false;
+        isSliding = true;
+
+        yield return new WaitForSeconds(slideDurationMin);
+        canGetUp = true;
+
+        yield return new WaitForSeconds(slideDurationMax - slideDurationMin);
+        if (isSliding) StartCoroutine(GetUpFromSlide());
+    }
+    
+    private IEnumerator GetUpFromSlide()
+    {
+        bool cantGetUp = Physics2D.OverlapBox(slideBlockPoint.position, slideBlockRadius, 0f, groundLayers);
+        
+        while (cantGetUp)
+        {
+            cantGetUp = Physics2D.OverlapBox(slideBlockPoint.position, slideBlockRadius, 0f, groundLayers);
+            yield return HelperFunctions.GetWait(0.05f);
+        }
+
+        animator.SetBool("is_sliding", false);
+        
+        if (isSliding) playerSoundController.OnSlideDeactivate();
+
+        StopCoroutine(slideCoroutine);
+        canGetUp = false;
+        isSliding = false;
+    }
+
+    #endregion
+
+    #region Helper Methods
+
+    private void HandleFlipping()
+    {
+        if (isWallJumping) return;
+
+        if ((moveInput > 0 && isFacingRight == -1) || (moveInput < 0 && isFacingRight == 1))
+        {
+            Flip();
+        }
+    }
+
+    private bool CanWallJump() => !isGrounded && wallMounted;
+    
+    private void UpdateAnimatorStates()
+    {
+        bool isIdleNow = moveInput == 0;
+        if (is_idle != isIdleNow)
+        {
+            is_idle = isIdleNow;
+            animator.SetBool("is_idle", is_idle);
+        }
+        
+        bool isMountedNow = wallMounted;
+        if (is_mounted != isMountedNow)
+        {
+            is_mounted = isMountedNow;
+            animator.SetBool("is_mounted", is_mounted);
+        }
+        
+        bool isAirborneNow = !isGrounded;
+        if (is_airborne != isAirborneNow)
+        {
+            is_airborne = isAirborneNow;
+            animator.SetBool("is_airborne", is_airborne);
+        }
+    }
+
+    private void Flip()
+    {
+        isFacingRight *= -1;
+        Vector3 scale = animator.transform.localScale;
+        scale.x *= -1;
+        animator.transform.localScale = scale;
+    }
+
+    public void Respawn(Vector2 newSpawnPoint)
+    {
+        rb.velocity = Vector2.zero;
+        transform.position = newSpawnPoint;
+    }
+
+    #endregion
+    
+    public DebugInformation[] GetDebugInformation()
+    {
+        List<DebugInformation> debugInformations = new List<DebugInformation>
+        {
+            new DebugInformation(nameof(moveInput), moveInput),
+            new DebugInformation(nameof(isGrounded), isGrounded),
+            new DebugInformation(nameof(canJump), canJump),
+            new DebugInformation(nameof(isWallJumping), isWallJumping),
+            new DebugInformation(nameof(wallMounted), wallMounted),
+            new DebugInformation(nameof(isFacingRight), isFacingRight),
+            new DebugInformation(nameof(nonZeroVelocityTime), nonZeroVelocityTime),
+            new DebugInformation(nameof(lastSpeedState), lastSpeedState)
+        };
+
+        return debugInformations
+            .OrderBy(info => info.value is float || info.value is int ? 0 : 1)
+            .ThenBy(info => info.value is int ? 0 : 1)
+            .ToArray();
+    }
+}    
+</code></pre>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
