@@ -2,12 +2,9 @@ window.addEventListener('load', function() {
     GetAge(dateOfBirth);
 });
 
-
-
-
 function copyText(text) {
     navigator.clipboard.writeText(text)
-    alert("Text Copied!")
+    alert("'" + text + "' Copied to clipboard!")
 }
 
 let dateOfBirth = '2004-11-12';

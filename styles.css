@@ -73,3 +73,7 @@ h3 {
 hr {
     opacity: 50%;
 }
+
+a #makeBlue:hover {
+    color: blue;
+}
