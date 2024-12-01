@@ -43,7 +43,9 @@ var projectsList = [
     {date: '2024-04-14', name: "Liquipedia to vlr chrome extension", link: "https://github.com/YoavTC/liquipedia-to-vlr"},
     {date: '2024-07-08', name: "vct-classics", link: ""},
     {date: '2024-08-01', name: "redacted", link: ""},
-    {date: '2024-10-27', name: "valorant-statistics", link: ""}
+    {date: '2024-10-27', name: "valorant-statistics", link: ""},
+    {date: '2024-11-04', name: "Unity Scene Switcher", link: "https://github.com/YoavTC/unity-scene-switcher"},
+    {date: '2024-11-30', name: "Super Toolbelt", link: "https://github.com/YoavTC/super-toolbelt"},
 
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
