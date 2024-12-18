@@ -1,79 +1,85 @@
+:root {
+    --background: #1a1a1a;
+    --yellow: #f6e308;
+    --blue: #00349e;
+    --gray: #ffffff80;
+    --white: #f3edde;
+}
+
 @font-face {
     font-family: JetBrains;
     src: url('JetbrainsMonoRegular.ttf');
 }
 
+
 body {
     font-family: JetBrains;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: var(--background);
+    color: var(--white);
     margin: 2.5%;
     white-space: nowrap;
+    user-select: var(--background);
 }
 
-h2 {
-    width: fit-content;
-}
-
-.linkOption {
-    color: black;
-    user-select: none;
-    margin: 1%;
-    margin-right: 100%;
-    background-color: red;
-    text-transform: uppercase;
-}
-
-.linkOption .highlight{
-    color: black;
-    background-color: rgb(246, 227, 8);
-    user-select: none;
-    margin: 1%;
-    margin-right: 100%;
-    text-transform: uppercase;
-}
-
-.linkOption:hover .highlight {
-    color: white;
+::selection {
     background-color: #00349e;
 }
 
+h2, h1 {
+    width: fit-content;
+    letter-spacing: 0px;
+}
+
+/* Misc */
+.note {
+    color: var(--gray);
+}
+
+.highlight{
+    color: var(--background);
+    background-color: var(--yellow);
+}
+
+.highlight::selection {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.title {
+    user-select: none;
+}
+
+.title::before {
+    content: "//";
+}
+
+/* Links */
+.linkOption, .linkOption a:visited {
+    text-transform: uppercase;
+    background-color: var(--background);
+    color: var(--white);
+    user-select: none;
+}
+
+.linkOption:hover, .linkOption a:visited:hover{
+    background-color: var(--blue)
+}
+
+.linkOption a:hover:before{
+    content: "▸";
+}
+
+a, a:visited, a:hover, a:visited:hover {
+    text-decoration: none;
+}
+
+/* Back button */
 #backButton {
-    color: black;
-    background-color: rgb(246, 227, 8);
+    color: var(--background);
+    background-color: var(--yellow);
 }
 
 #backButton:hover {
-    color: white;
-    background-color: #00349e;
-}
-
-a, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover, a:visited:hover {
-    color: white;
-}
-
-a:hover, a:visited:hover {
-    color: white;
-}
-
-h3 {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-#highlightText {
-    color: black;
-    background-color: rgb(246, 227, 8);
-}
-
-hr {
-    opacity: 50%;
-}
-
-a #makeBlue:hover {
-    color: blue;
+    color: var(--white);
+    background-color: var(--blue);
 }
