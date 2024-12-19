@@ -55,14 +55,14 @@ h2, h1 {
 }
 
 /* Links */
-.linkOption, .linkOption a:visited {
+.linkOption a, .linkOption a:visited {
     text-transform: uppercase;
     background-color: var(--background);
     color: var(--white);
     user-select: none;
 }
 
-.linkOption:hover, .linkOption a:visited:hover{
+.linkOption a:hover, .linkOption a:visited:hover{
     background-color: var(--blue)
 }
 
@@ -70,7 +70,7 @@ h2, h1 {
     content: "▸";
 }
 
-a, a:visited, a:hover, a:visited:hover {
+a, a:visited, a:hover, a:visited:hover, a:visited {
     text-decoration: none;
     font-weight: normal;
 }
