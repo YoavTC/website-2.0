@@ -1,0 +1,28 @@
+.about {
+    width: auto;
+    display: flex;
+}
+
+.about_text {
+    height: auto;
+    width: 190%;
+}
+
+.about_text p {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.about_image img {
+    /* margin: 0; */
+    /* top: 0; */
+    
+    padding-left: 50px;
+
+    height: 100%;
+    width: 80%;
+}
+
+.about hr {
+    margin-right: 5%;
+}
