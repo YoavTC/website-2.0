@@ -148,3 +148,9 @@ pre {
     height: 100%;
     border-radius: 5px;
 }
+
+iframe {
+    /* width: 50%;
+    height: 50%; */
+    size: 50% 50%;
+}
