@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏃‍♀️ • [REDACTED]</title>
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../projects/other/style_blog_new.css">
+    <link rel="stylesheet" href="../other/game-runner.css">
+
+    <style>body {background-image: linear-gradient(to bottom, #382c55, #8f828f);}</style>
+</head>
+<body>
+    <h2><a href="../../pages/projects.html" id="backButton">Back &nbsp;&nbsp;←</a></h2>
+
+    <h1 class="post-title">[REDACTED]</h1>
+
+    <h2>General Information:</h2>
+    <div class="project-info">
+        🧬 Type: Video Game<br>
+        📅 Dates: Apr 2024 → Aug 2024<br>
+        💼 Contributers: <a href="https://yoavtc.work/linkedin">Yoav TC</a>, <a href="https://www.linkedin.com/in/ohad-dori/">Ohad Dori</a>, <a href="https://www.linkedin.com/in/inbar-gal-bb1125308/">Inbar Gal</a> & <a href="https://www.linkedin.com/in/alex-yakovlev-430124308/">Alex Yakovlev</a><br>
+        📂 Source Files: <a href="https://github.com/YoavTC/openu-group-project">github.com/YoavTC/openu-group-project</a><br>
+        🔗 Download Link: <a href="https://yoav-tc.itch.io/redacted">yoav-tc.itch.io/redacted</a>
+    </div>
+
+    <h2>About:</h2>
+    <p>
+        [REDACTED] is a game I made for the 2nd semester of my Game Development studies in the <a href="https://www.openu.ac.il/hasifa/game-design.html" target="_blank">Open University of Israel</a>. 
+        I made this game alongside our character artist & animator <a href="https://www.linkedin.com/in/ohad-dori/" target="_blank">Ohad Dori</a>, the project manager & level designer <a href="https://www.linkedin.com/in/inbar-gal-bb1125308/" target="_blank">Inbar Gal</a> and the environmental artist <a href="https://www.linkedin.com/in/alex-yakovlev-430124308/" target="_blank">Alex Yakovlev</a>.
+        Overall I've learnt a lot during the creation of this game. Both on myself and on working within a team. I'm very happy with the final result!
+    </p>
+    <p>
+        1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed hendrerit elit. Morbi eget rhoncus erat.
+        In quis nisl eu tellus facilisis aliquet. Sed id lacinia nunc. Mauris risus enim, tempor sed eros a, euismod viverra leo. Vivamus nec aliquam enim. Curabitur pretium erat sit amet arcu commodo tristique. Pellentesque porta velit a velit posuere, eget commodo dolor consectetur.
+        Proin eu libero ex. Proin sed diam elit. Nulla facilisi. Pellentesque vitae diam vel arcu porttitor cursus sit amet id lacus. Suspendisse potenti. Mauris at leo quis lorem vestibulum viverra quis ac metus. Duis mattis risus nulla, eget pellentesque nunc accumsan et. Nullam ac consequat lorem.
+    </p>
+
+    <span style="display: flex;">
+        <h2>Play The Game:</h2>
+        <button style="margin-top: 20px; margin-left: 600px;" onclick="window.open('fullscreen-game.html')" id="fullscreen-button" type="button">Play Fullscreen 📺</button>
+    </span>
+    <h3 class="note">Please note: the game is pretty heavy, it is reccomended to download it <a href="https://yoav-tc.itch.io/redacted">here</a> instead.</h3>
+    <!-- Game container -->
+    <div class="game-container">
+        <button id="start-button" type="button"></button>
+        <img src="inactive.png" class="inactive-game-img">
+        <canvas id="unity-canvas"></canvas>
+
+        <!-- 
+            Newer Unity Engine builds, value = "Builds"
+            Older Unity Engine builds, value = "Web"
+        -->
+        <div id="build-files-path-prefix" value="Builds"></div>
+    </div>
+    <!-- Game container -->
+
+    <hr>
+
+    <h2>Media:</h2>
+    <div class="image-grid">
+        <img src="media/Screenshot_21.webp">
+        <img src="media/Screenshot_20.webp">
+        <img src="media/Screenshot_19.webp">
+    </div>
+    <br>
+    <div class="image-grid">
+        <img src="media/Screenshot_15.webp">
+        <img src="media/Screenshot_14.webp">
+        <img src="media/Screenshot_11.webp">
+        <img src="media/Screenshot_2.webp">
+        <img src="media/Screenshot_1.webp">
+    </div>
+    <br>
+
+    <h2>YouTube Videos:</h2>
+    <div class="image-grid">
+        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/OAnGK9GWqhg?si=H5KtO2DUCfbZ2Rgu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
+        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/r56LaLAmLHc?si=ppzSZsnqy9j1g8tY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+    </div>
+
+    <br>
+
+    <h2>Archive:</h2>
+    <div class="image-grid">
+        <img src="archive/level flow sketch.webp"
+            title="Level flow sketch">
+
+        <img src="archive/wall land & slide sketches.webp"
+            title="Character mount & wall slide sketches">
+
+        <div class="image-grid">
+            <img src="archive/background building concept sketch.webp">
+    
+            <img src="archive/drone sketch.webp"
+                title="Ohad's first drone sketch">       
+        </div>
+            
+        <div class="image-grid">
+            <img src="archive/early character sketches.webp"
+                title="Ohad's first character concept">
+
+            <img src="archive/early concept art.webp"
+                title="Ohad's earliest concept art">
+        </div>
+
+    </div>
+    <br>
+    <div class="image-grid">
+        <img src="archive/scrapped drone Ai concept.gif">
+        <img src="archive/scrapped drone Ai concept v2.gif">
+        <img src="archive/wall jumping and slide.gif">
+    </div>
+    <br>
+    <div class="image-grid">
+        <img src="archive/MVP demo.gif">
+        <img src="archive/dynamic cameras.gif">
+        <img src="archive/scrapped wall climbing system.gif">
+    </div>
+    <br>
+    <div class="image-grid">
+        <img src="archive/comics system.gif">
+        <img src="archive/glass breaking.gif">
+        <img src="archive/run to slide transition.gif">
+    </div>
+    
+    <hr>
+
+    <h2>Linkedin Posts:</h2>
+
+    <br>
+    
+    <!-- Linkedin embeds -->
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7209886689777840129" height="900" width="500" frameborder="0" allowfullscreen=""></iframe>
+
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7217532573571313664" height="900" width="500" frameborder="0" allowfullscreen=""></iframe>
+
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7224832387157819393" height="900" width="500" frameborder="0" allowfullscreen=""></iframe>
+
+    <!-- Make all <a> elements open a new tab upon trigger -->
+    <script>document.querySelectorAll('a').forEach(link => {if (link.id !== 'backButton') {link.target = '_blank';link.rel = 'noopener noreferrer';}});</script>
+    <script src="../other/game-runner.js"></script>
+</body>
+</html>
