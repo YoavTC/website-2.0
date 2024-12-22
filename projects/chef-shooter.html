@@ -11,26 +11,6 @@
     <style>body {background: linear-gradient(to bottom, #757575, #0c062c);background-size: cover;}</style>
 </head>
 <body>
-
-    <!-- Game container -->
-    <!-- Todo:
-
-     - Refactor projects HTML sructure so is dir based (ie, go into index.html instead of projectName.html).
-     - Put web build of each game in its own proj dir.
-     - Make the unity web instance playable upon click and not automatically
-     
-     -->
-    <canvas id="unity-canvas" style="width: 960px; height: 540px; background-image: url('banners/bamboo-flute.png');"></canvas>
-    <script src="../web game instances/chef-shooter/Build/Web.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "../web game instances/chef-shooter/Build/Web.data",
-        frameworkUrl: "../web game instances/chef-shooter/Build/Web.framework.js",
-        codeUrl: "../web game instances/chef-shooter/Build/Web.wasm",
-      });
-    </script>
-    <!-- Game container -->
-
     <h1>
         <a href="../pages/projects.html" id="backButton">Back &nbsp;&nbsp;←</a>
     </h1>

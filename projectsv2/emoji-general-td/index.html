@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😀 • Emoji General TD</title>
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../projects/other/style_blog_new.css">
+    <link rel="stylesheet" href="../other/game-runner.css">
+
+    <style>body {background-image: linear-gradient(to bottom, #2c5536, #878f82);}</style>
+</head>
+<body>
+    <h2><a href="../../pages/projects.html" id="backButton">Back &nbsp;&nbsp;←</a></h2>
+
+    <h1 class="post-title">Emoji General TD</h1>
+
+    <h2>General Information:</h2>
+    <div class="project-info">
+        🧬 Type: Video Game Development Tool<br>
+        📅 Dates: Aug 2024 → Dec 2024<br>
+        💼 Contributers: <a href="../linkedin.html">Yoav TC</a>, <a href="https://www.linkedin.com/in/ohad-dori/">Ohad Dori</a><br>
+        📂 Source Files: <a href="https://github.com/YoavTC/openu-final-project">github.com/YoavTC/openu-final-project</a><br>
+        🔗 Download Link: <a href="https://github.com/YoavTC/openu-final-project/raw/refs/heads/main/Builds/openu-final-project%20v4.19.zip">Build v4.19 via GitHub</a>
+    </div>
+
+    <h2>About:</h2>
+    <p>
+        This is a game I made for my Open University (Hasifa)'s Game Development course's final project, You can check out the game I made with a team in the prior semester, <a href="../redacted/">[REDACTED]</a>.
+        <br>
+        The game is a simple take on the Tower Defence genre. You use your Emoji towers to fight off waves of incoming enemies. There are multiple tower and enemy types, and the game encourages to experiment and find combos and unique placing strategies.
+    </p>
+    <p>
+        Below you can play/download the game, and see my development jounrey along with some presentations and documentations I had to make as homework.
+    </p>
+
+    <span style="display: flex;">
+        <h2>Play The Game:</h2>
+        <button style="margin-top: 20px; margin-left: 600px;" onclick="window.open('fullscreen-game.html')" id="fullscreen-button" type="button">Play Fullscreen 📺</button>
+    </span>
+    
+    <h3 class="note">Please note: the game is pretty heavy, it is reccomended to download it <a href="https://github.com/YoavTC/openu-final-project/raw/refs/heads/main/Builds/openu-final-project%20v4.19.zip">here</a> instead.</h3>
+    <!-- Game container -->
+    <div class="game-container">
+        <button id="start-button" type="button"></button>
+        <img src="inactive.png" class="inactive-game-img">
+        <canvas id="unity-canvas"></canvas>
+
+        <!-- 
+            Newer Unity Engine builds, value = "Builds"
+            Older Unity Engine builds, value = "Web"
+        -->
+        <div id="build-files-path-prefix" value="Builds"></div>
+    </div>
+    <!-- Game container -->
+
+    <hr>
+
+    <h2>YouTube Videos:</h2>
+
+    <!-- 2 YouTube Videos: 1020x573 -->
+    <div class="image-grid">
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/gYZha3CZy3s?si=yp93BZMGrg_ZTKee" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/crv7zQWgFnE?si=nYP1cDg07agvL8QX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/hWTs0muJr5k?si=nt_GCg4tPq9HaJhh&amp;start=1410" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+    </div>
+
+    <h2>Media:</h2>
+    <div class="image-grid">
+        <img src="media/Main Menu concept.webp" title="Main menu screen">
+        <img src="media/Screenshot_11.webp" title="Screenshot #01">
+        <img src="media/Screenshot_2.webp" title="Screenshot #02">
+        <img src="media/2024-11-27 16-50-18_1.gif" title="Level selection scene">
+    </div>
+    
+    <h2>Archive:</h2>
+    <div class="image-grid">
+        <img src="media/2024-09-24 09-51-08_1.gif" title="First iteration">
+        <img src="media/2024-10-28 22-11-34.gif" title="Second iteration">
+        <img src="media/playtester.webp" title="Playtester during the 3rd iteration playtesting session">
+    </div>
+
+    <br>
+
+    <br>
+    
+    <!-- Linkedin embeds -->
+    <div class="image-grid">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7271467259976466432" height="800" width="500" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+    
+    <!-- Make all <a> elements open a new tab upon trigger -->
+    <script>document.querySelectorAll('a').forEach(link => {if (link.id !== 'backButton') {link.target = '_blank';link.rel = 'noopener noreferrer';}});</script>
+    <script src="../other/game-runner.js"></script>
+</body>
+</html>
