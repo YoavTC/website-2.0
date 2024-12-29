@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐀 • Chef Shooter</title>
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../projects/other/style_blog_new.css">
+    <link rel="stylesheet" href="../other/game-runner.css">
+
+    <style>body {background-image: linear-gradient(to bottom, #5a5a5a, #383838);}</style>
+</head>
+<body>
+    <h2><a href="../../pages/projects.html" id="backButton">Back &nbsp;&nbsp;←</a></h2>
+
+    <h1 class="post-title">Chef Shooter</h1>
+
+    <h2>General Information:</h2>
+    <div class="project-info">
+        🧬 Type: Video Game<br>
+        📅 Dates: Feb 2022<br>
+        💼 Contributers: <a href="../linkedin.html">Yoav TC</a>, <a href="https://www.youtube.com/@noamkuchy4098">Kuchy</a><br>
+        🔗 Link: <a href="https://yoav-tc.itch.io/chef-shooter">yoav-tc.itch.io/chef-shooter</a>
+    </div>
+
+    <h2>About:</h2>
+    <p>
+        Chef Shooter was my first complete project in Unity, I made it from my already existing knowledge of C#, and some YouTube tutorials. 
+    </p>
+    <p>
+        The game is a simple 2D wave-shooter where you play as a chef who needs to protect his kitchen from incoming rats. The rats vary in size and speed, and the more you kill, the faster they spawn.
+        <br>
+        I made the visual art for the game, while a friend of mine Kuchy, made the soundtrack.
+    </p>
+
+    <span style="display: flex;">
+        <h2>Play The Game:</h2>
+        <button style="margin-top: 20px; margin-left: 600px;" onclick="window.open('fullscreen-game.html')" id="fullscreen-button" type="button">Play Fullscreen 📺</button>
+        <button style="margin-top: 20px; margin-left: -320px;" onclick="window.open('https://yoav-tc.itch.io/chef-shooter')" id="fullscreen-button" type="button">Donwload ⬇️</button>
+    </span>
+    <!-- Game container -->
+    <div class="game-container">
+        <button id="start-button" type="button"></button>
+        <img src="inactive.png" class="inactive-game-img">
+        <canvas id="unity-canvas"></canvas>
+
+        <!-- 
+            Newer Unity Engine builds, value = "Builds"
+            Older Unity Engine builds, value = "Web"
+        -->
+        <div id="build-files-path-prefix" value="Web"></div>
+    </div>
+    <!-- Game container -->
+
+    <hr>
+
+    <h2>Media:</h2>
+    <div class="image-grid">
+        <img src="media/mainMenu.webp">
+        <img src="media/tutorial.webp">
+        <img src="media/deathScreenActualFinal.webp">
+        <img src="media/pause.webp">
+    </div>
+
+    <br>
+
+    <div class="image-grid">
+        <iframe width="100%" height="275px" src="https://www.youtube.com/embed/ddK5avJ51uo?si=aYjzTq6gJ1xgi7ZH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+        <img src="media/Screenshot_2.webp">
+        <img src="media/Screenshot_3.webp">
+        <img src="media/Screenshot_4.webp">
+    </div>
+    
+    <h2>Archive:</h2>
+    <div class="image-grid">
+        <img src="media/deathScreenbg.webp">
+        <img src="media/DeathScreenFinal.webp">
+        <img src="media/skins.webp">
+    </div>
+
+    <!-- Make all <a> elements open a new tab upon trigger -->
+    <script>document.querySelectorAll('a').forEach(link => {if (link.id !== 'backButton') {link.target = '_blank';link.rel = 'noopener noreferrer';}});</script>
+    <script src="../other/game-runner.js"></script>
+</body>
+</html>
