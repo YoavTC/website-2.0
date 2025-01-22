@@ -61,13 +61,11 @@
 }
 
 .readMore {
-    background-color: var(--yellow);
-    color: var(--background);
-}
-
-.readMore:hover {
-    background-color: var(--blue);
+    /* background-color: var(--yellow); */
+    /* color: var(--background); */
     color: var(--white);
+    text-decoration: underline;
+    font-weight: bolder;
 }
 
 /* Sorting */

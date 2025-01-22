@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="other/about.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="assets/about.css">
     <title><TC/About></title>
 </head>
 <body>
@@ -21,14 +21,14 @@
             <p><b>></b> I am extremely passionate about producing fun and socially interactive games and experiences. </p>
             <p><b>></b> I am hungry to learn more about how the game development industry operates behind the scenes. </p>
             <p><b>></b> I am a fast learner, and an autodidact. I thrive in environment where I can work on things that interest me (shocker I know).</p>
-            <p><b>></b> I am a Game Development & Design graduate of <a class="highlight" href="https://www.openu.ac.il/en/pages/default.aspx" target="_blank">the Open University of Israel</a></p>
+            <p><b>></b> I am a Game Development & Design graduate of <a class="highlight" href="https://www.openu.ac.il/en/pages/default.aspx">the Open University of Israel</a></p>
             <hr>
             <h2>Past_Experiences:</h2>
             <p>
                 <p><b>></b> Managed a Minecraft staff team for my Minecraft Server.</p>
                 <p><b>></b> Managed a Discord community of over 1000+ members for my Minecraft Server.</p>
                 <p><b>></b> Developed multiple mobile & pc games alone while studying in school.</p>
-                <p><b>></b> Made 2 student project games while studying in the Open University of Israel (<a class="highlight" href="../projectsv2/redacted/">[REDACTED]</a> & <a class="highlight" href="../projectsv2/emoji-general-td/">Emoji General TD</a>).</p>
+                <p><b>></b> Made 2 student project games while studying in the Open University of Israel (<a class="highlight" href="../project/redacted/">[REDACTED]</a> & <a class="highlight" href="../project/emoji-general-td/">Emoji General TD</a>).</p>
             </p>
         </div>
         <div class="about_image">
@@ -61,6 +61,9 @@
         <p><b>></b> I asked my mom to describe me in one word, she said "Sharp". But it's not fair, she's biased.</p>
         <p><b>></b> The best movie to ever be released is Cars 2, and I will die on this hill.</p>
     </p>
-    <script src="../Utility.js"></script>
+
+    <!-- Make all <a> elements open a new tab upon trigger -->
+    <script>document.querySelectorAll('a').forEach(link => {if (link.id !== 'backButton') {link.target = '_blank';link.rel = 'noopener noreferrer';}});</script>
+    <script src="../assets/utility.js"></script>
 </body>
 </html>

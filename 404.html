@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        // Define a dictionary with multiple terms pointing to the same URL
+        const urlMappings = {
+          "linkedin": "https://www.linkedin.com/in/yoav-trachtman-cohen/",
+          "in": "https://www.linkedin.com/in/yoav-trachtman-cohen/",
+          "linkin": "https://www.linkedin.com/in/yoav-trachtman-cohen/",
+          
+          "itch.io": "https://yoav-tc.itch.io/",
+          "itchio": "https://yoav-tc.itch.io/",
+          "itch": "https://yoav-tc.itch.io/",
+          
+          "GitHub": "https://github.com/YoavTC",
+          "git": "https://github.com/YoavTC",
+          "code": "https://github.com/YoavTC"
+        };
+      
+        // Get the current URL path and split it
+        const arg = window.location.pathname.split('/').pop();
+        // alert(arg);
+
+        if (urlMappings.hasOwnProperty(arg)) {
+            window.location.href = urlMappings[arg];
+        } else {
+            window.location.href = "/pages/page-not-found.html";
+        }
+      </script> 
+</body>
+</html>

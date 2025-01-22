@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>😀 • Emoji General TD</title>
 
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../../projects/other/style_blog_new.css">
-    <link rel="stylesheet" href="../other/game-runner.css">
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../assets/project.css">
+    <link rel="stylesheet" href="../assets/game-runner.css">
 
     <style>body {background-image: linear-gradient(to bottom, #2c5536, #878f82);}</style>
     <link href="https://fonts.cdnfonts.com/css/luckiest-guy" rel="stylesheet">
@@ -24,7 +24,7 @@
     <div class="project-info">
         🧬 Type: Video Game<br>
         📅 Dates: Aug 2024 → Dec 2024<br>
-        💼 Contributers: <a href="../linkedin.html">Yoav TC</a>, <a href="https://www.linkedin.com/in/ohad-dori/">Ohad Dori</a><br>
+        💼 Contributers: Yoav TC, <a href="https://www.linkedin.com/in/ohad-dori/">Ohad Dori</a><br>
         📂 Source Files: <a href="https://github.com/YoavTC/openu-final-project">github.com/YoavTC/openu-final-project</a><br>
         🔗 Download Link: <a href="https://github.com/YoavTC/openu-final-project/raw/refs/heads/main/Builds/openu-final-project%20v4.19.zip">Build v4.19 via GitHub</a>
     </div>
@@ -42,9 +42,8 @@
     <span style="display: flex;">
         <h2>Play The Game:</h2>
         <button style="margin-top: 20px; margin-left: 600px;" onclick="window.open('fullscreen-game.html')" id="fullscreen-button" type="button">Play Fullscreen 📺</button>
+        <button style="margin-top: 20px; margin-left: -320px;" onclick="window.open('https://yoav-tc.itch.io/emoji-general-td')" id="fullscreen-button" type="button">Donwload ⬇️</button>
     </span>
-    
-    <h3 class="note">Please note: the game is pretty heavy, it is reccomended to download it <a href="https://github.com/YoavTC/openu-final-project/raw/refs/heads/main/Builds/openu-final-project%20v4.19.zip">here</a> instead.</h3>
     <!-- Game container -->
     <div class="game-container">
         <button id="start-button" type="button"></button>
@@ -98,6 +97,6 @@
     
     <!-- Make all <a> elements open a new tab upon trigger -->
     <script>document.querySelectorAll('a').forEach(link => {if (link.id !== 'backButton') {link.target = '_blank';link.rel = 'noopener noreferrer';}});</script>
-    <script src="../other/game-runner.js"></script>
+    <script src="../assets/game-runner.js"></script>
 </body>
 </html>
