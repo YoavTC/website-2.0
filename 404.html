@@ -16,14 +16,13 @@
           "itchio": "https://yoav-tc.itch.io/",
           "itch": "https://yoav-tc.itch.io/",
           
-          "GitHub": "https://github.com/YoavTC",
+          "github": "https://github.com/YoavTC",
           "git": "https://github.com/YoavTC",
           "code": "https://github.com/YoavTC"
         };
       
         // Get the current URL path and split it
-        const arg = window.location.pathname.split('/').pop();
-        // alert(arg);
+        const arg = window.location.pathname.split('/').pop().toLowerCase;
 
         if (urlMappings.hasOwnProperty(arg)) {
             window.location.href = urlMappings[arg];
