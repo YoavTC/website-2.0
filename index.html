@@ -4,23 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="pages/assets/projects.css">
+    <link rel="stylesheet" href="pages/assets/about.css">
     <title><TC></title>
 </head>
 <body>
     <h1 class="highlight title">Main Pages</h1>
     <h2>
-        <div class="linkOption"><a href="/pages/about.html">ℹ️About_Me&nbsp;</a></div>
+        <!-- <div class="linkOption"><a href="/pages/about.html">ℹ️About_Me&nbsp;</a></div>
         <div class="linkOption"><a href="/pages/projects.html">🗃️My_Projects&nbsp;</a></div>
-        <div class="linkOption"><a href="/pages/contact.html">☎️Contact_Me&nbsp;</a></div>
+        <div class="linkOption"><a href="/pages/contact.html">☎️Contact_Me&nbsp;</a></div> -->
+        <div class="linkOption"><a href="#about">ℹ️About_Me&nbsp;</a></div>
+        <div class="linkOption"><a href="#projects">🗃️My_Projects&nbsp;</a></div>
+        <div class="linkOption"><a href="#contact">☎️Contact_Me&nbsp;</a></div>
     </h2>
     <br>
-    <h1 class="highlight title">Other Links</h1>
+    <h1 class="highlight title">Other</h1>
     <h2>
         <div class="linkOption"><a href="https://github.com/YoavTC/" target="_blank">📂GitHub&nbsp;</a></div>
         <div class="linkOption"><a href="https://www.linkedin.com/in/yoav-trachtman-cohen-646bba241/" target="_blank">💼Linkedin&nbsp;</a></div>
         <div class="linkOption"><a href="https://yoav-tc.itch.io/" target="_blank">🕹️itch.io&nbsp;</a></div>
         <div class="linkOption"><a href="https://www.youtube.com/@yoav_tc" target="_blank">📺YouTube&nbsp;</a></div>
         <div class="linkOption"><a href="https://bsky.app/profile/yoavtc.bsky.social" target="_blank">🦋BlueSky&nbsp;</a></div>
+    </h2>
+
+    <hr id="about">
+
+    <h1>Hello! My name is Yoav TC, and I love creating <u>experiences</u> for <u> people</u></h1>
+    <hr>
+    <div class="about">
+        <div class="about_text">
+            <h2>A_Bit_About_Me</h2>
+            <p><b>></b> I am a <span id="age">20</span> year-old game developer and designer. </p>
+            <p><b>></b> I live in Tel-Aviv. </p>
+            <p><b>></b> I am extremely passionate about producing fun and socially interactive games and experiences. </p>
+            <p><b>></b> I am hungry to learn more about how the game development industry operates behind the scenes. </p>
+            <p><b>></b> I am a fast learner, and an autodidact. I thrive in environment where I can work on things that interest me (shocker I know).</p>
+            <p><b>></b> I am a Game Development & Design graduate of <a class="highlight" href="https://www.openu.ac.il/en/pages/default.aspx">the Open University of Israel</a></p>
+            <hr>
+            <h2>Past_Experiences:</h2>
+            <p>
+                <p><b>></b> Managed a Minecraft staff team for my Minecraft Server.</p>
+                <p><b>></b> Managed a Discord community of over 1000+ members for my Minecraft Server.</p>
+                <p><b>></b> Developed multiple mobile & pc games alone while studying in school.</p>
+                <p><b>></b> Made 2 student project games while studying in the Open University of Israel (<a class="highlight" href="../project/redacted/">[REDACTED]</a> & <a class="highlight" href="../project/emoji-general-td/">Emoji General TD</a>).</p>
+            </p>
+        </div>
+        <div class="about_image">
+            <img src="pages/assets/me.png">
+        </div>
+    </div>
+
+
+    <hr id="projects">
+
+    <h1 class="projects-section-title">Games</h1>
+    <div class="projects-container">
+        <div onclick="window.open('https://brohad.itch.io/bubble-brawl')" class="project" style="background-image: url('pages/assets/project_thumbnails/bubble-brawl.png');"></div>
+        <div onclick="window.location = '/projects/emoji-general-td' " class="project" style="background-image: url('pages/assets/project_thumbnails/emoji-general-td.png');"></div>
+        <div onclick="window.location = '/project/redacted' " class="project" style="background-image: url('pages/assets/project_thumbnails/redacted.png');"></div>
+        <div onclick="window.location = '/projects/israel-wolfenstein.html' " class="project" style="background-image: url('pages/assets/project_thumbnails/israel-wolfenstein.png');"></div>
+        <div onclick="window.location = '/project/pizza-defender' " class="project" style="background-image: url('pages/assets/project_thumbnails/pizza-defender.png');"></div>
+        <div onclick="window.location = '/project/chef-shooter' " class="project" style="background-image: url('pages/assets/project_thumbnails/chef-shooter.png');"></div>
+        <div onclick="window.location = '/project/claytyne' " class="project" style="background-image: url('pages/assets/project_thumbnails/claytyne.png');"></div>
+    </div>
+
+    <h1 class="projects-section-title">Tools</h1>
+    <div class="projects-container">
+        <div onclick="window.open('https://github.com/YoavTC/super-toolbelt')" class="project" style="background-image: url('pages/assets/project_thumbnails/super-toolbelt.png');"></div>
+        <div onclick="window.open('https://github.com/YoavTC/helper-functions')" class="project" style="background-image: url('pages/assets/project_thumbnails/helper-functions.png');"></div>
+        <div onclick="window.open('https://yoav-tc.itch.io/roll-20-die')" class="project" style="background-image: url('pages/assets/project_thumbnails/roll-20-die.png');"></div>
+        <div onclick="window.open('https://yoav-tc.itch.io/vct-coin-toss')" class="project" style="background-image: url('pages/assets/project_thumbnails/vct-cointoss.png');"></div>
+    </div>
+
+    <h1 class="projects-section-title">Addons</h1>
+    <div class="projects-container">
+        <div onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=2784890244')" class="project" style="background-image: url('pages/assets/project_thumbnails/de_jaffa.png');"></div>
+        <div onclick="window.open('https://www.curseforge.com/minecraft/mc-mods/more-ice')" class="project" style="background-image: url('pages/assets/project_thumbnails/more-ice.png');"></div>
+        <div onclick="window.open('https://www.curseforge.com/minecraft/mc-mods/bamboo-flute')" class="project" style="background-image: url('pages/assets/project_thumbnails/bamboo-flute.png');"></div>
+        <div onclick="window.open('https://www.curseforge.com/minecraft/mc-mods/vineyard-mod')" class="project" style="background-image: url('pages/assets/project_thumbnails/vineyard.png');"></div>
+        <div onclick="window.open('https://www.curseforge.com/minecraft/mc-mods/mulberry')" class="project" style="background-image: url('pages/assets/project_thumbnails/mullberry.png');"></div>
+        <!-- <div onclick="window.open('')" class="project" style="background-image: url('assets/project_thumbnails/');"></div> -->
+    </div>
+
+    <hr id="contact">
+
+    <h3 class="note">(Click to copy)</h3>
+    <h2>
+        <div id="makeBlue" onclick="copyText('yoavtc')">Discord: yoavtc</div>
+        <div id="makeBlue" onclick="copyText('yoavtc2004@gmail.com')">E-Mail: yoavtc2004@gmail.com</div>
+        <br>
+        <a id="backButton" target="_blank" href="https://www.linkedin.com/in/yoav-trachtman-cohen/">You can also message me on Linkedin!</a></div>
     </h2>
 </body>
 </html>

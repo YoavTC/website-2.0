@@ -12,6 +12,10 @@
     src: url('JetbrainsMonoRegular.ttf');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
     font-family: JetBrains;
