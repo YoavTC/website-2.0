@@ -1,4 +1,5 @@
 const datapackOrder= [
+    "Dynamic Light Sources",
     "Guinea Pigs",
     "Decorations+",
     "Upgrade Enchantments",
@@ -123,6 +124,19 @@ const datapacks =
         urls: [
             "https://www.planetminecraft.com/data-pack/beer-brewing/",
             "https://www.youtube.com/watch?v=kyxF5bxvpOQ"
+        ]
+    },
+    {
+        name: "Dynamic Light Sources",
+        image: "Light_15.png",
+        background_image: "dynamic_light_sources.png",
+        version: "1.21.7",
+        downloads: "0",
+        description: "Make campfires, candles and torchflowers react to the time of day",
+        urls: [
+            "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
+            "https://modrinth.com/datapack/dynamic-light-sources",
+            "https://www.youtube.com/watch?v=_SHG1zkCtkM"
         ]
     }
 ]
