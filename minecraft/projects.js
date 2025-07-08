@@ -22,7 +22,7 @@ const datapacks =
         name: "Guinea Pigs",
         image: "pig_spawn_egg.png",
         background_image: "guinea_pigs.webp",
-        version: "1.21.5",
+        version: "1.21.7",
         downloads: "30",
         description: "Allows the player to turn a pig into a Guinea Pig",
         urls: [
@@ -33,8 +33,8 @@ const datapacks =
         name: "Decorations+",
         image: "Armor_Stand.png",
         background_image: "decorations_plus.png",
-        version: "1.21.5",
-        downloads: "450",
+        version: "1.21.7",
+        downloads: "500",
         description: "Adds 25 placeable decorations to the game",
         urls: [
             "https://www.planetminecraft.com/data-pack/decorations-plus-6298249/",
@@ -131,7 +131,7 @@ const datapacks =
         image: "Light_15.png",
         background_image: "dynamic_light_sources.png",
         version: "1.21.7",
-        downloads: "0",
+        downloads: "70",
         description: "Make campfires, candles and torchflowers react to the time of day",
         urls: [
             "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
