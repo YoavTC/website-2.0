@@ -1,4 +1,5 @@
 const datapackOrder= [
+    "Rain Temple",
     "Dynamic Light Sources",
     "Guinea Pigs",
     "Decorations+",
@@ -7,7 +8,6 @@ const datapackOrder= [
     "Simple Baking",
     "Holiday Spirit: Christmas",
     "Holiday Spirit: Halloween",
-    "Rain Temple",
     "Beer Brewing"
 ]
 
@@ -106,12 +106,14 @@ const datapacks =
         name: "Rain Temple",
         image: "Lightning_Rod.png",
         background_image: "rain_temple.png",
-        version: "1.21",
+        version: "1.21.7",
         downloads: "1.6k",
         description: "Control the weather!",
         urls: [
             "https://www.planetminecraft.com/data-pack/rain-temple/",
-            "https://youtu.be/mYKDmj-XFrc?t=359"
+            "https://youtu.be/mYKDmj-XFrc?t=359",
+            "https://www.planetminecraft.com/data-pack/rain-temple-6670034/",
+            "https://www.youtube.com/watch?v=4vv7DCMIHPw"
         ]
     },
     {
@@ -131,7 +133,7 @@ const datapacks =
         image: "Light_15.png",
         background_image: "dynamic_light_sources.png",
         version: "1.21.7",
-        downloads: "70",
+        downloads: "85",
         description: "Make campfires, candles and torchflowers react to the time of day",
         urls: [
             "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
