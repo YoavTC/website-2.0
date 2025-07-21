@@ -1,8 +1,8 @@
 const datapackOrder= [
     "Rain Temple",
+    "Decorations+",
     "Dynamic Light Sources",
     "Guinea Pigs",
-    "Decorations+",
     "Upgrade Enchantments",
     "Watering Can",
     "Simple Baking",
@@ -33,8 +33,8 @@ const datapacks =
         name: "Decorations+",
         image: "Armor_Stand.png",
         background_image: "decorations_plus.png",
-        version: "1.21.7",
-        downloads: "500",
+        version: "1.21.8",
+        downloads: "590",
         description: "Adds 25 placeable decorations to the game",
         urls: [
             "https://www.planetminecraft.com/data-pack/decorations-plus-6298249/",
@@ -106,14 +106,15 @@ const datapacks =
         name: "Rain Temple",
         image: "Lightning_Rod.png",
         background_image: "rain_temple.png",
-        version: "1.21.7",
-        downloads: "1.6k",
+        version: "1.21.8",
+        downloads: "1.7k",
         description: "Control the weather!",
         urls: [
-            "https://www.planetminecraft.com/data-pack/rain-temple/",
             "https://youtu.be/mYKDmj-XFrc?t=359",
+            "https://www.youtube.com/watch?v=4vv7DCMIHPw",
             "https://www.planetminecraft.com/data-pack/rain-temple-6670034/",
-            "https://www.youtube.com/watch?v=4vv7DCMIHPw"
+            "https://www.curseforge.com/minecraft/data-packs/rain-temple",
+            "https://modrinth.com/datapack/rain-temple"
         ]
     },
     {
@@ -132,8 +133,8 @@ const datapacks =
         name: "Dynamic Light Sources",
         image: "Light_15.png",
         background_image: "dynamic_light_sources.png",
-        version: "1.21.7",
-        downloads: "85",
+        version: "1.21.8",
+        downloads: "140",
         description: "Make campfires, candles and torchflowers react to the time of day",
         urls: [
             "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
