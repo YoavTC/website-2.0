@@ -12,8 +12,11 @@ const datapackOrder= [
 ]
 
 const modOrder = [
-    "Quality of Life",
-    "Example Mod"
+    "More Ice",
+    "Vineyard",
+    "Mulberry",
+    "Kill Me Not!",
+    "Bamboo Flute",
 ]
 
 const datapacks = 
@@ -147,27 +150,60 @@ const datapacks =
 const mods = 
 [
     {
-        name: "Quality of Life",
-        image: "Creeper_Banner_Pattern.png",
-        background_image: "quality_of_life.png",
-        version: "1.20.4",
-        downloads: "4.2k",
-        description: "Small improvements and conveniences for better gameplay",
+        name: "More Ice",
+        image: "Packed_ice.png",
+        background_image: "More_ice.webp",
+        version: "1.16.5",
+        downloads: "54.5k",
+        description: "Adds more icy items, blocks and food into the game",
         urls: [
-            "https://www.curseforge.com/minecraft/mc-mods/quality-of-life",
-            "https://modrinth.com/mod/quality-of-life",
-            "https://github.com/user/quality-of-life-mod"
+            "https://www.curseforge.com/minecraft/mc-mods/more-ice",
+            "https://www.youtube.com/watch?v=CIZbK9iHx-o",
         ]
     },
     {
-        name: "Example Mod",
-        image: "Creeper_Banner_Pattern.png",
-        background_image: "example_mod.png",
-        version: "1.20.4",
-        downloads: "100",
-        description: "An example mod for demonstration purposes",
+        name: "Vineyard",
+        image: "Vineyard.png",
+        background_image: "vineyard.png",
+        version: "1.19.2",
+        downloads: "1.2k",
+        description: "Adds growing grapes on vines, stomping grapes to create wine and wine ageing mechanics",
         urls: [
-            "https://github.com/YoavTC/bamboo-flute"
+            "https://www.curseforge.com/minecraft/mc-mods/vineyard-mod"
+        ]
+    },
+    {
+        name: "Mulberry",
+        image: "Mulberry.png",
+        background_image: "mulberry.webp",
+        version: "1.19.2",
+        downloads: "250",
+        description: "Adds mulberries, mulberry trees and a new woodtype to the game",
+        urls: [
+            "https://www.curseforge.com/minecraft/mc-mods/mulberry"
+        ]
+    },
+    {
+        name: "Kill Me Not!",
+        image: "wandering_trader_spawn_egg.png",
+        background_image: "kill_me_not.webp",
+        version: "1.19.3",
+        downloads: "100",
+        description: "Prevents the poor Wandering Trader from being killed by the player",
+        urls: [
+            "https://www.curseforge.com/minecraft/mc-mods/kill-me-not"
+        ]
+    },
+    {
+        name: "Bamboo Flute",
+        image: "Bamboo.png",
+        background_image: "bamboo_flute.webp",
+        version: "1.19.3",
+        downloads: "500",
+        description: "Adds a Bamboo Flute that can be played by the player",
+        urls: [
+            "https://www.curseforge.com/minecraft/mc-mods/bamboo-flute",
+            "https://www.youtube.com/watch?v=1DWqNR6aH_Q"
         ]
     }
 ]
@@ -240,5 +276,5 @@ function loadMods() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadDatapacks();
-    // loadMods();
+    loadMods();
 });
