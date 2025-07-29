@@ -151,8 +151,8 @@ const mods =
 [
     {
         name: "More Ice",
-        image: "Packed_ice.png",
-        background_image: "More_ice.webp",
+        image: "Packed_Ice.png",
+        background_image: "more_ice.webp",
         version: "1.16.5",
         downloads: "54.5k",
         description: "Adds more icy items, blocks and food into the game",
@@ -163,7 +163,7 @@ const mods =
     },
     {
         name: "Vineyard",
-        image: "Vineyard.png",
+        image: "vineyard.png",
         background_image: "vineyard.png",
         version: "1.19.2",
         downloads: "1.2k",
