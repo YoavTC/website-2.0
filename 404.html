@@ -22,7 +22,7 @@
         };
       
         // Get the current URL path and split it
-        const arg = window.location.pathname.split('/').pop().toLowerCase;
+        const arg = window.location.pathname.split('/').pop().toLowerCase();
 
         if (urlMappings.hasOwnProperty(arg)) {
             window.location.href = urlMappings[arg];

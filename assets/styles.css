@@ -1,3 +1,6 @@
+/* =========================================
+   Theme Variables
+   ========================================= */
 :root {
     --background: #1a1a1a;
     --backgroundLight: #2a2a2a;
@@ -7,87 +10,75 @@
     --white: #f3edde;
 }
 
-@font-face {
-    font-family: JetBrains;
-    src: url('JetbrainsMonoRegular.ttf');
+/* =========================================
+    Fonts
+    ========================================= */
+@font-face { font-family: JetBrains; src: url('JetbrainsMonoRegular.ttf'); }
+
+/* =========================================
+    Base / Reset
+    ========================================= */
+html { scroll-behavior: smooth; }
+
+
+body { font-family: JetBrains; background-color: var(--background); color: var(--white); margin: 2.5%; user-select: var(--background); }
+
+::selection { background-color: var(--blue); }
+
+h2, h1 { width: fit-content; letter-spacing: 0; }
+
+/* =========================================
+    Utilities & Generic Elements
+    ========================================= */
+.note { color: var(--gray); }
+
+.highlight { color: var(--background); background-color: var(--yellow); }
+
+.highlight::selection { background-color: var(--blue); color: var(--white); }
+
+.title { user-select: none; }
+.title::before { content: "//"; }
+
+/* =========================================
+    Links & Navigation
+    ========================================= */
+.linkOption a, .linkOption a:visited { text-transform: uppercase; background-color: var(--background); color: var(--white); user-select: none; }
+
+.linkOption a:hover, .linkOption a:visited:hover { background-color: var(--blue) }
+
+.linkOption a:hover:before { content: "▸"; }
+
+a, a:visited, a:hover, a:visited:hover { text-decoration: none; font-weight: normal; }
+
+/* =========================================
+    Buttons
+    ========================================= */
+#backButton { color: var(--background); background-color: var(--yellow); text-shadow: 0 0 0 transparent; text-decoration: none; }
+
+#backButton:hover { color: var(--white); background-color: var(--blue); text-decoration: none; }
+
+#footer { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); font-size: larger; }
+
+/* =========================================
+    Projects Grid (merged from former projects.css)
+    ========================================= */
+#projects-container { display: flex; flex-direction: column; gap: 2rem; }
+
+.projects-container { /* unified responsive grid */
+     --tile-size: 200px;
+     padding: 20px 10px; margin: 0 auto; max-width: 100%;
+     display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--tile-size), 1fr));
+     gap: 16px; justify-items: center;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+.project { width: var(--tile-size); height: var(--tile-size); background-size: cover; background-position: center; background-repeat: no-repeat; border: 3px solid black; box-sizing: border-box; transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.project:hover { cursor: pointer; transform: scale(1.05); border-color: white; box-shadow: 0 0 10px 2px #ffffff33; }
 
+/* Responsive tweaks */
+@media (max-width: 900px) { .projects-container { --tile-size: 150px; gap: 14px; } }
+@media (max-width: 650px) { .projects-section-title { margin-top: 80px; } .projects-container { --tile-size: 130px; gap: 12px; } }
+@media (max-width: 480px) { .projects-container { --tile-size: 110px; gap: 10px; } }
 
-body {
-    font-family: JetBrains;
-    background-color: var(--background);
-    color: var(--white);
-    margin: 2.5%;
-    user-select: var(--background);
-}
-
-::selection {
-    background-color: #00349e;
-}
-
-h2, h1 {
-    width: fit-content;
-    letter-spacing: 0px;
-}
-
-/* Misc */
-.note {
-    color: var(--gray);
-}
-
-.highlight{
-    color: var(--background);
-    background-color: var(--yellow);
-}
-
-.highlight::selection {
-    background-color: var(--blue);
-    color: var(--white);
-}
-
-.title {
-    user-select: none;
-}
-
-.title::before {
-    content: "//";
-}
-
-/* Links */
-.linkOption a, .linkOption a:visited {
-    text-transform: uppercase;
-    background-color: var(--background);
-    color: var(--white);
-    user-select: none;
-}
-
-.linkOption a:hover, .linkOption a:visited:hover{
-    background-color: var(--blue)
-}
-
-.linkOption a:hover:before{
-    content: "▸";
-}
-
-a, a:visited, a:hover, a:visited:hover, a:visited {
-    text-decoration: none;
-    font-weight: normal;
-}
-
-/* Back button */
-#backButton {
-    color: var(--background);
-    background-color: var(--yellow);
-    text-shadow: 0px 0px 0px transparent;
-    text-decoration: none;
-}
-
-#backButton:hover {
-    color: var(--white);
-    background-color: var(--blue);
-    text-decoration: none;
-}
+/* =========================================
+    End Projects Grid
+    ========================================= */
