@@ -62,7 +62,6 @@ a, a:visited, a:hover, a:visited:hover { text-decoration: none; font-weight: nor
 /* =========================================
     Projects Grid (merged from former projects.css)
     ========================================= */
-#projects-container { display: flex; flex-direction: column; gap: 2rem; }
 
 .projects-container { /* unified responsive grid */
      --tile-size: 200px;
@@ -78,7 +77,6 @@ a, a:visited, a:hover, a:visited:hover { text-decoration: none; font-weight: nor
 @media (max-width: 900px) { .projects-container { --tile-size: 150px; gap: 14px; } }
 @media (max-width: 650px) { .projects-section-title { margin-top: 80px; } .projects-container { --tile-size: 130px; gap: 12px; } }
 @media (max-width: 480px) { .projects-container { --tile-size: 110px; gap: 10px; } }
-
 /* =========================================
     End Projects Grid
     ========================================= */
