@@ -1,4 +1,5 @@
 const datapackOrder= [
+    "Display Containers",
     "Rain Temple",
     "Decorations+",
     "Dynamic Light Sources",
@@ -22,6 +23,19 @@ const modOrder = [
 const datapacks = 
 [
     {
+        name: "Display Containers",
+        image: "Item_Frame.png",
+        background_image: "display_containers.png",
+        version: "1.21.9",
+        downloads: "10",
+        description: "Display blocks inside Barrels, Cauldrons, Composters and Hoppers",
+        urls: [
+            "https://www.planetminecraft.com/data-pack/display-containers/",
+            "https://modrinth.com/datapack/display-containers/",
+            "https://www.curseforge.com/minecraft/data-packs/display-containers"
+        ]
+    },
+    {
         name: "Guinea Pigs",
         image: "pig_spawn_egg.png",
         background_image: "guinea_pigs.webp",
@@ -37,7 +51,7 @@ const datapacks =
         image: "Armor_Stand.png",
         background_image: "decorations_plus.png",
         version: "1.21.8",
-        downloads: "590",
+        downloads: "980",
         description: "Adds 25 placeable decorations to the game",
         urls: [
             "https://www.planetminecraft.com/data-pack/decorations-plus-6298249/",
@@ -137,7 +151,7 @@ const datapacks =
         image: "Light_15.png",
         background_image: "dynamic_light_sources.png",
         version: "1.21.8",
-        downloads: "140",
+        downloads: "410",
         description: "Make campfires, candles and torchflowers react to the time of day",
         urls: [
             "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
