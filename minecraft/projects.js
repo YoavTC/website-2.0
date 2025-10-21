@@ -1,4 +1,5 @@
 const datapackOrder= [
+    "Halloween Decorations",
     "Display Containers",
     "Rain Temple",
     "Decorations+",
@@ -157,6 +158,21 @@ const datapacks =
             "https://www.planetminecraft.com/data-pack/dynamic-light-sources-1-21-7/",
             "https://modrinth.com/datapack/dynamic-light-sources",
             "https://www.youtube.com/watch?v=_SHG1zkCtkM"
+        ]
+    },
+    {
+        name: "Halloween Decorations",
+        image: "Carved_Pumpkin.png",
+        background_image: "halloween_decorations.jpg",
+        version: "1.21.10",
+        downloads: "60",
+        description: "A Datapack that adds 30 new spooky craftable decorations to the game with no resourcepack required!",
+        urls: [
+            "modrinth.com/datapack/halloween-decorations",
+            "https://www.curseforge.com/minecraft/data-packs/halloween-decorations",
+            "https://www.planetminecraft.com/data-pack/halloween-decorations-6752611/",
+            "https://www.youtube.com/watch?v=7WgCviCF7Q0",
+            "https://github.com/YoavTC/halloween-decorations"
         ]
     }
 ]
